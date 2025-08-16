@@ -19,18 +19,13 @@ export default function MinimalTemplate({ data }) {
         </h1>
         <div className="flex justify-center flex-wrap gap-6 text-sm text-gray-600">
           {data.personalInfo?.email && <span>{data.personalInfo.email}</span>}
-          }
           {data.personalInfo?.phone && <span>{data.personalInfo.phone}</span>}
-          }
           {data.personalInfo?.address && <span>{data.personalInfo.address}</span>}
-          }
         </div>
         {(data.personalInfo?.linkedin || data.personalInfo?.website) && (
           <div className="flex justify-center flex-wrap gap-6 text-sm text-gray-600 mt-2">
             {data.personalInfo?.linkedin && <span>{data.personalInfo.linkedin}</span>}
-            }
             {data.personalInfo?.website && <span>{data.personalInfo.website}</span>}
-            }
           </div>
         )}
       </div>

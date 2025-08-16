@@ -23,16 +23,12 @@ export default function ClassicTemplate({ data }) {
           )}
           <div className="flex justify-center space-x-4">
             {data.personalInfo?.email && <span>{data.personalInfo.email}</span>}
-            }
             {data.personalInfo?.phone && <span>{data.personalInfo.phone}</span>}
-            }
           </div>
           {(data.personalInfo?.linkedin || data.personalInfo?.website) && (
             <div className="flex justify-center space-x-4">
               {data.personalInfo?.linkedin && <span>{data.personalInfo.linkedin}</span>}
-              }
               {data.personalInfo?.website && <span>{data.personalInfo.website}</span>}
-              }
             </div>
           )}
         </div>
@@ -90,7 +86,6 @@ export default function ClassicTemplate({ data }) {
                   </h3>
                   <p className="text-gray-700">{edu.school}</p>
                   {edu.gpa && <p className="text-sm text-gray-600">GPA: {edu.gpa}</p>}
-                  }
                 </div>
                 <span className="text-sm text-gray-600">
                   {formatDate(edu.startDate)} - {formatDate(edu.endDate)}

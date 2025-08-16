@@ -165,7 +165,6 @@ export default function CreativeTemplate({ data }) {
                   <p className="text-xs text-gray-500 mt-1">
                     {formatDate(edu.startDate)} - {formatDate(edu.endDate)}
                     {edu.gpa && <span className="block">GPA: {edu.gpa}</span>}
-                    }
                   </p>
                 </div>
               ))}

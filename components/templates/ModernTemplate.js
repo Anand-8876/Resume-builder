@@ -83,7 +83,6 @@ export default function ModernTemplate({ data }) {
                 <div className="text-right text-sm text-gray-500">
                   {formatDate(edu.startDate)} - {formatDate(edu.endDate)}
                   {edu.gpa && <div>GPA: {edu.gpa}</div>}
-                  }
                 </div>
               </div>
             </div>

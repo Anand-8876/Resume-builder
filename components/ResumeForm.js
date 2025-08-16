@@ -1,7 +1,6 @@
-'use client'
 import { useState, useEffect } from 'react'
 
-export default function ResumeForm({ initialData, onSave }) {
+export default function ResumeForm() {
   const [formData, setFormData] = useState({
     personalInfo: {
       fullName: '',
@@ -45,16 +44,6 @@ export default function ResumeForm({ initialData, onSave }) {
       }
     ]
   })
-
-  useEffect(() => {
-    if (initialData && Object.keys(initialData).length > 0) {
-      setFormData(initialData)
-    }
-  }, [initialData])
-
-  useEffect(() => {
-    onSave(formData)
-  }, [formData, onSave])
 
   const handleInputChange = (section, field, value, index = null) => {
     setFormData(prev => {
@@ -125,7 +114,7 @@ export default function ResumeForm({ initialData, onSave }) {
   }
 
   return (
-    <div className="bg-white rounded-lg border-2 border-black p-8 shadow-lg">
+    <div className="bg-white rounded-lg border-2 border-black p-8 shadow-lg max-w-4xl mx-auto">
       <h2 className="text-2xl font-bold mb-8 text-black">Build Your Resume</h2>
       
       {/* Personal Information */}
@@ -139,7 +128,7 @@ export default function ResumeForm({ initialData, onSave }) {
               value={formData.personalInfo.fullName}
               onChange={(e) => handleInputChange('personalInfo', 'fullName', e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black"
-              placeholder="John Doe"
+              placeholder="Anand ."
             />
           </div>
           <div>
@@ -149,7 +138,7 @@ export default function ResumeForm({ initialData, onSave }) {
               value={formData.personalInfo.email}
               onChange={(e) => handleInputChange('personalInfo', 'email', e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black"
-              placeholder="john@example.com"
+              placeholder="Anand@example.com"
             />
           </div>
           <div>
@@ -179,7 +168,7 @@ export default function ResumeForm({ initialData, onSave }) {
               value={formData.personalInfo.linkedin}
               onChange={(e) => handleInputChange('personalInfo', 'linkedin', e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black"
-              placeholder="linkedin.com/in/johndoe"
+              placeholder="linkedin.com/in/Anand."
             />
           </div>
           <div>
@@ -189,7 +178,7 @@ export default function ResumeForm({ initialData, onSave }) {
               value={formData.personalInfo.website}
               onChange={(e) => handleInputChange('personalInfo', 'website', e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black"
-              placeholder="www.johndoe.com"
+              placeholder="www.Anand..com"
             />
           </div>
         </div>
@@ -469,6 +458,13 @@ export default function ResumeForm({ initialData, onSave }) {
           </div>
         ))}
       </section>
+
+      <div className="mt-8 p-4 bg-gray-50 rounded-lg">
+        <h4 className="text-sm font-medium text-gray-700 mb-2">Form Data Preview:</h4>
+        <pre className="text-xs text-gray-600 overflow-auto max-h-40">
+          {JSON.stringify(formData, null, 2)}
+        </pre>
+      </div>
     </div>
   )
 }
